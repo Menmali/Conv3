@@ -1,0 +1,363 @@
+{
+  "meta": {
+    "domain": "cardiovascular",
+    "full_name": "Cardiovascular Diseases (CAD)",
+    "icd_codes": ["BA6Z", "BA40", "BA5Z"],
+    "guidelines": {
+      "blood_pressure": "2017 AHA/ACC Guideline for High Blood Pressure",
+      "cholesterol":    "2018 ACC/AHA Guideline on the Management of Blood Cholesterol",
+      "chest_pain":        "2021 AHA/ACC Guideline for Evaluation and Diagnosis of Chest Pain",
+      "coronary_disease":  "2023 AHA/ACC Guideline for Chronic Coronary Disease",
+      "silent_ischemia":   "ACC/AHA Silent Myocardial Ischaemia Definition"
+    },
+    "description": "Cardiovascular ontology for data coverage assessment. Attribute bins and sub-class rules are sourced directly from ACC/AHA clinical practice guidelines."
+  },
+
+  "attributes": [
+    {
+      "id": "age",
+      "label": "Patient Age",
+      "dataset_column": "age",
+      "aliases": ["Age", "AGE", "patient_age"],
+      "standard": "LOINC", "code": "21612-7",
+      "type": "continuous", "unit": "years",
+      "required": true, "missing_threshold": 0.05,
+      "guideline_note": "ACC/AHA risk stratification begins at age 45 for men",
+      "coverage_bins": [
+        {"label": "young_adult",  "min": 18,  "max": 44,  "note": "< 45 years"},
+        {"label": "middle_aged",  "min": 45,  "max": 59,  "note": "45–59 — ACC/AHA elevated-risk threshold"},
+        {"label": "senior",       "min": 60,  "max": 120, "note": "≥ 60 years"}
+      ]
+    },
+    {
+      "id": "sex",
+      "label": "Biological Sex",
+      "dataset_column": "sex",
+      "aliases": ["Sex", "SEX", "gender", "Gender"],
+      "standard": "SNOMED CT", "code": "184100006",
+      "type": "categorical",
+      "required": true, "missing_threshold": 0.05,
+      "values": [
+        {"code": 0, "label": "female"},
+        {"code": 1, "label": "male"}
+      ]
+    },
+    {
+      "id": "cp",
+      "label": "Chest Pain Type",
+      "dataset_column": "cp",
+      "aliases": ["CP", "chest_pain", "chest_pain_type"],
+      "standard": "SNOMED CT", "code": "29857009",
+      "type": "categorical",
+      "required": true, "missing_threshold": 0.05,
+      "guideline_note": "2021 AHA/ACC Chest Pain Guideline — four-type classification",
+      "values": [
+        {"code": 1, "label": "typical_angina",     "note": "Classic effort-related chest pain"},
+        {"code": 2, "label": "atypical_angina",     "note": "Atypical features, some anginal"},
+        {"code": 3, "label": "non_anginal_pain",    "note": "Non-ischaemic chest pain"},
+        {"code": 4, "label": "asymptomatic",        "note": "No chest pain — silent presentation"}
+      ]
+    },
+    {
+      "id": "trestbps",
+      "label": "Resting Blood Pressure (Systolic)",
+      "dataset_column": "trestbps",
+      "aliases": ["trestbps", "blood_pressure", "bp", "resting_bp", "systolic_bp"],
+      "standard": "LOINC", "code": "8480-6",
+      "type": "continuous", "unit": "mmHg",
+      "required": true, "missing_threshold": 0.05,
+      "guideline_note": "2017 AHA/ACC Hypertension Guideline — four BP categories",
+      "coverage_bins": [
+        {"label": "normal",              "min": 0,   "max": 119, "note": "< 120 mmHg — Normal"},
+        {"label": "elevated",            "min": 120, "max": 129, "note": "120–129 — Elevated BP"},
+        {"label": "stage1_hypertension", "min": 130, "max": 139, "note": "130–139 — Stage 1 HTN"},
+        {"label": "stage2_hypertension", "min": 140, "max": 999, "note": "≥ 140 mmHg — Stage 2 HTN"}
+      ]
+    },
+    {
+      "id": "chol",
+      "label": "Serum Cholesterol",
+      "dataset_column": "chol",
+      "aliases": ["Chol", "CHOL", "cholesterol", "serum_chol", "total_cholesterol"],
+      "standard": "LOINC", "code": "2093-3",
+      "type": "continuous", "unit": "mg/dL",
+      "required": true, "missing_threshold": 0.05,
+      "guideline_note": "2026 ACC/AHA Lipid Guideline — three cholesterol categories",
+      "coverage_bins": [
+        {"label": "desirable",       "min": 0,   "max": 199,  "note": "< 200 mg/dL — Desirable"},
+        {"label": "borderline_high", "min": 200, "max": 239,  "note": "200–239 — Borderline High"},
+        {"label": "high",            "min": 240, "max": 9999, "note": "≥ 240 mg/dL — High"}
+      ]
+    },
+    {
+      "id": "fbs",
+      "label": "Fasting Blood Sugar > 120 mg/dL",
+      "dataset_column": "fbs",
+      "aliases": ["FBS", "fasting_blood_sugar", "fasting_glucose"],
+      "standard": "LOINC", "code": "1558-6",
+      "type": "categorical",
+      "required": true, "missing_threshold": 0.05,
+      "values": [
+        {"code": 0, "label": "normal",   "note": "FBS ≤ 120 mg/dL"},
+        {"code": 1, "label": "elevated", "note": "FBS > 120 mg/dL — diabetic indicator"}
+      ]
+    },
+    {
+      "id": "restecg",
+      "label": "Resting ECG Results",
+      "dataset_column": "restecg",
+      "aliases": ["RestECG", "rest_ecg", "ecg", "resting_ecg"],
+      "standard": "LOINC", "code": "11524-6",
+      "type": "categorical",
+      "required": false, "missing_threshold": 0.10,
+      "values": [
+        {"code": 0, "label": "normal"},
+        {"code": 1, "label": "st_t_wave_abnormality", "note": "T-wave inversion or ST depression > 0.05 mV"},
+        {"code": 2, "label": "left_ventricular_hypertrophy", "note": "LVH by Estes' criteria"}
+      ]
+    },
+    {
+      "id": "thalach",
+      "label": "Maximum Heart Rate Achieved",
+      "dataset_column": "thalach",
+      "aliases": ["Thalach", "max_hr", "heart_rate", "max_heart_rate"],
+      "standard": "LOINC", "code": "8867-4",
+      "type": "continuous", "unit": "bpm",
+      "required": true, "missing_threshold": 0.05,
+      "guideline_note": "2023 AHA/ACC CCD — HR thresholds define ischaemia severity",
+      "coverage_bins": [
+        {"label": "critically_low", "min": 0,   "max": 99,  "note": "< 100 bpm — critically low"},
+        {"label": "low",            "min": 100, "max": 119, "note": "100–119 bpm — SevereIschaemia threshold"},
+        {"label": "moderate",       "min": 120, "max": 139, "note": "120–139 bpm — STDepressionRisk threshold"},
+        {"label": "normal",         "min": 140, "max": 999, "note": "≥ 140 bpm — normal exercise response"}
+      ]
+    },
+    {
+      "id": "exang",
+      "label": "Exercise-Induced Angina",
+      "dataset_column": "exang",
+      "aliases": ["Exang", "EXANG", "exercise_angina", "exercise_induced_angina"],
+      "standard": "SNOMED CT", "code": "194828000",
+      "type": "categorical",
+      "required": true, "missing_threshold": 0.05,
+      "values": [
+        {"code": 0, "label": "no"},
+        {"code": 1, "label": "yes"}
+      ]
+    },
+    {
+      "id": "oldpeak",
+      "label": "ST Depression (Exercise vs Rest)",
+      "dataset_column": "oldpeak",
+      "aliases": ["Oldpeak", "OLDPEAK", "st_depression"],
+      "standard": "SNOMED CT", "code": "164931005",
+      "type": "continuous", "unit": "mm",
+      "required": true, "missing_threshold": 0.05,
+      "guideline_note": "2023 AHA/ACC CCD — ST depression thresholds: 2 mm for risk, 3 mm for severe",
+      "coverage_bins": [
+        {"label": "minimal_or_none", "min": 0.0,  "max": 1.0,  "note": "0–1 mm — Minimal or absent"},
+        {"label": "moderate",        "min": 1.01, "max": 3.0,  "note": "1–3 mm — Moderate depression"},
+        {"label": "severe",          "min": 3.01, "max": 99.0, "note": "> 3 mm — Severe (SevereIschaemia threshold)"}
+      ]
+    },
+    {
+      "id": "slope",
+      "label": "Slope of Peak Exercise ST Segment",
+      "dataset_column": "slope",
+      "aliases": ["Slope", "SLOPE", "st_slope"],
+      "standard": "SNOMED CT", "code": "164930006",
+      "type": "categorical",
+      "required": false, "missing_threshold": 0.10,
+      "values": [
+        {"code": 1, "label": "upsloping",   "note": "Favorable prognosis"},
+        {"code": 2, "label": "flat",         "note": "Flat slope — STDepressionRisk indicator"},
+        {"code": 3, "label": "downsloping",  "note": "Worst prognosis"}
+      ]
+    },
+    {
+      "id": "ca",
+      "label": "Number of Major Vessels with Blockage (Fluoroscopy)",
+      "dataset_column": "ca",
+      "aliases": ["CA", "vessels", "num_vessels", "major_vessels"],
+      "standard": "SNOMED CT", "code": "41976001",
+      "type": "ordinal",
+      "required": false, "missing_threshold": 0.10,
+      "values": [
+        {"code": 0, "label": "zero_vessels"},
+        {"code": 1, "label": "one_vessel"},
+        {"code": 2, "label": "two_vessels"},
+        {"code": 3, "label": "three_vessels"}
+      ]
+    },
+    {
+      "id": "thal",
+      "label": "Thalium Stress Test Result",
+      "dataset_column": "thal",
+      "aliases": ["Thal", "THAL", "thalassemia", "thallium"],
+      "standard": "SNOMED CT", "code": "71651007",
+      "type": "categorical",
+      "required": false, "missing_threshold": 0.10,
+      "values": [
+        {"code": 3, "label": "normal",             "note": "Normal blood flow"},
+        {"code": 6, "label": "fixed_defect",       "note": "Permanent perfusion deficit"},
+        {"code": 7, "label": "reversible_defect",  "note": "Stress-induced deficit — SevereIschaemia indicator"}
+      ]
+    },
+    {
+      "id": "num",
+      "label": "Diagnosis of CAD (Target Variable)",
+      "dataset_column": "num",
+      "aliases": ["target", "Target", "heart_disease", "condition", "diagnosis", "label"],
+      "standard": "ICD-11", "code": "BA6Z",
+      "type": "ordinal",
+      "required": true, "missing_threshold": 0.0,
+      "is_target": true,
+      "values": [
+        {"code": 0, "label": "no_disease",        "note": "No significant CAD"},
+        {"code": 1, "label": "mild_disease"},
+        {"code": 2, "label": "moderate_disease"},
+        {"code": 3, "label": "severe_disease"},
+        {"code": 4, "label": "very_severe_disease"}
+      ]
+    }
+  ],
+
+  "subclasses": [
+    {
+      "id": "HighRiskCAD",
+      "label": "Cardiovascular High-Risk CAD",
+      "short_label": "High-Risk CAD",
+      "priority": "critical",
+      "guideline": "2017 AHA/ACC BP Guideline + 2018 ACC/AHA Lipid Guideline",
+      "clinical_note": "Male patient ≥45 with Stage 2 hypertension (≥140 mmHg), high total cholesterol (≥240 mg/dL), and elevated fasting blood sugar",
+      "key_attributes": ["trestbps", "chol", "fbs", "sex", "age"],
+      "min_required_samples": 20,
+      "rule": {
+        "logic": "AND",
+        "conditions": [
+          {"attribute": "trestbps", "op": ">=", "value": 140},
+          {"attribute": "chol",     "op": ">=", "value": 240},
+          {"attribute": "fbs",      "op": "==", "value": 1},
+          {"attribute": "sex",      "op": "==", "value": 1},
+          {"attribute": "age",      "op": ">=", "value": 45}
+        ]
+      }
+    },
+    {
+      "id": "StableAngina",
+      "label": "Stable Angina",
+      "short_label": "Stable Angina",
+      "priority": "high",
+      "guideline": "2021 AHA/ACC Chest Pain Guideline + 2023 AHA/ACC CCD Guideline",
+      "clinical_note": "Typical angina (cp=1), no exercise-induced symptoms, minimal ST changes (≤1mm), normal perfusion, no vessel obstruction",
+      "key_attributes": ["cp", "exang", "oldpeak", "thal", "ca"],
+      "min_required_samples": 10,
+      "rule": {
+        "logic": "AND",
+        "conditions": [
+          {"attribute": "cp",      "op": "==", "value": 1},
+          {"attribute": "exang",   "op": "==", "value": 0},
+          {"attribute": "oldpeak", "op": "<=", "value": 1},
+          {"attribute": "thal",    "op": "==", "value": 3},
+          {"attribute": "ca",      "op": "==", "value": 0}
+        ]
+      }
+    },
+    {
+      "id": "NonCardiacChestPain",
+      "label": "Non-Cardiac Chest Pain",
+      "short_label": "Non-Cardiac",
+      "priority": "medium",
+      "guideline": "2021 AHA/ACC Chest Pain Guideline — noncardiac classification",
+      "clinical_note": "Non-anginal chest pain (cp=3), no exercise-induced symptoms, no ST depression — ruled out as cardiac",
+      "key_attributes": ["cp", "exang", "oldpeak"],
+      "min_required_samples": 5,
+      "rule": {
+        "logic": "AND",
+        "conditions": [
+          {"attribute": "cp",      "op": "==", "value": 3},
+          {"attribute": "exang",   "op": "==", "value": 0},
+          {"attribute": "oldpeak", "op": "<=", "value": 0}
+        ]
+      }
+    },
+    {
+      "id": "SevereIschaemia",
+      "label": "Severe Ischaemia",
+      "short_label": "Severe Ischaemia",
+      "priority": "critical",
+      "guideline": "2023 AHA/ACC CCD Guideline — multi-vessel disease classification",
+      "clinical_note": "Severe ST depression (>3mm), very low max HR (<120 bpm), abnormal perfusion (thal≠3), multi-vessel disease (ca≥2)",
+      "key_attributes": ["oldpeak", "thalach", "thal", "ca"],
+      "min_required_samples": 20,
+      "rule": {
+        "logic": "AND",
+        "conditions": [
+          {"attribute": "oldpeak",  "op": ">",  "value": 3},
+          {"attribute": "thalach",  "op": "<",  "value": 120},
+          {"attribute": "thal",     "op": "!=", "value": 3},
+          {"attribute": "ca",       "op": ">=", "value": 2}
+        ]
+      }
+    },
+    {
+      "id": "STDepressionRisk",
+      "label": "ST-Depression Risk (Flat Slope)",
+      "short_label": "ST-Depression",
+      "priority": "high",
+      "guideline": "2023 AHA/ACC CCD Guideline — ST-segment slope analysis",
+      "clinical_note": "Flat ST slope (slope=2), moderate ST depression (≥2mm), sub-maximal HR response (<140 bpm)",
+      "key_attributes": ["slope", "oldpeak", "thalach"],
+      "min_required_samples": 10,
+      "rule": {
+        "logic": "AND",
+        "conditions": [
+          {"attribute": "slope",   "op": "==", "value": 2},
+          {"attribute": "oldpeak", "op": ">=", "value": 2},
+          {"attribute": "thalach", "op": "<",  "value": 140}
+        ]
+      }
+    },
+    {
+      "id": "SilentIschaemia",
+      "label": "Silent Ischaemia (Asymptomatic CAD)",
+      "short_label": "Silent Ischaemia",
+      "priority": "critical",
+      "guideline": "ACC/AHA Silent Myocardial Ischaemia Definition",
+      "clinical_note": "Asymptomatic patient (cp=4), no exercise-induced angina, but confirmed CAD diagnosis — the highest-risk missed population",
+      "key_attributes": ["cp", "exang", "num"],
+      "min_required_samples": 20,
+      "rule": {
+        "logic": "AND",
+        "conditions": [
+          {"attribute": "cp",    "op": "==", "value": 4},
+          {"attribute": "exang", "op": "==", "value": 0},
+          {"attribute": "num",   "op": ">=", "value": 1}
+        ]
+      }
+    }
+  ],
+
+  "semantic_progression": [
+    {"stage": 1, "attributes": ["age"],
+     "description": "Age group coverage — 3 expected bins"},
+    {"stage": 2, "attributes": ["age", "sex"],
+     "description": "Age × sex — 6 expected combinations"},
+    {"stage": 3, "attributes": ["age", "sex", "cp"],
+     "description": "Age × sex × chest pain type — 24 expected combinations"},
+    {"stage": 4, "attributes": ["age", "sex", "cp", "trestbps"],
+     "description": "Adding blood pressure — 96 expected combinations"},
+    {"stage": 5, "attributes": ["age", "sex", "cp", "trestbps", "chol"],
+     "description": "Adding cholesterol — 288 expected combinations"},
+    {"stage": 6, "attributes": ["age", "sex", "cp", "trestbps", "chol", "exang"],
+     "description": "Adding exercise angina — 576 expected combinations"}
+  ],
+
+  "thresholds": {
+    "sufficient":  0.75,
+    "borderline":  0.50,
+    "min_samples_per_subclass": 20,
+    "_sample_size_rationale": "EPV >= 20 threshold per Ogundimu et al. (J Clin Epidemiol 2016, PMC5045274) eliminates coefficient bias for low-prevalence predictors. Riley et al. (Stat Med 2019) pmsampsize framework confirms minimum adequate sample size for binary clinical prediction models.",
+    "_threshold_rationale": "75% sufficient threshold exceeds real-world EHR completeness benchmarks (age/sex ~89%, disease-level ~64%) per Kors et al. BMC Med Inform 2013. 50% borderline aligns with minimum acceptable completeness for clinical decision support per DQA systematic review 2024."
+}
+}
