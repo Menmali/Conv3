@@ -203,9 +203,11 @@ def main():
     _step(6, "Exporting OWL ontology + validation")
     from framework.owl_exporter import export_owl, validate_owl, print_owl_validation
 
-    owl_path   = export_owl(ontology, col_cov, mapping, output_dir=output_dir)
+    # Generate the OWL file first
+    owl_path = export_owl(ontology, col_cov, mapping, output_dir=output_dir)
     print(f"  OWL file saved → {owl_path}")
 
+    # Then validate it
     owl_report = validate_owl(owl_path, df, ontology)
     print_owl_validation(owl_report)
     # ── Charts ────────────────────────────────────────────────────────────────
