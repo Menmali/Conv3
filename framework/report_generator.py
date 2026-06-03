@@ -354,7 +354,7 @@ def generate_charts(
     s_cnt  = [r.sample_count for r in subs]
     s_col  = [GREEN if r.adequate else (ORANGE if r.covered else RED) for r in subs]
     yp     = range(len(subs))
-
+  
     ax2.barh(list(yp), s_cnt, color=s_col, edgecolor="#ffffff15", height=0.6)
     ax2.axvline(subs[0].min_required if subs else 5,
                 color=ORANGE, linestyle="--", linewidth=1.2, alpha=0.8)
