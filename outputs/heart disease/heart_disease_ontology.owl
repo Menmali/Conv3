@@ -1,0 +1,722 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:ex="http://example.org/heartdisease#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://example.org/heartdisease#fbs_normal">
+    <rdf:type rdf:resource="http://example.org/heartdisease#FastingBloodSugar120MgDl"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>normal</rdfs:label>
+    <ex:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0</ex:code>
+    <rdfs:comment>FBS ≤ 120 mg/dL</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#exang">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/heartdisease#Patient"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label>Exercise-Induced Angina</rdfs:label>
+    <ex:snomedCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">194828000</ex:snomedCode>
+    <ex:coverageScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</ex:coverageScore>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#SlopeOfPeakExerciseStSegment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/heartdisease#MedicalTest"/>
+    <rdfs:label>Slope of Peak Exercise ST Segment</rdfs:label>
+    <rdfs:comment>Standard: SNOMED CT | Code: 164930006</rdfs:comment>
+    <ex:datasetColumn rdf:datatype="http://www.w3.org/2001/XMLSchema#string">slope</ex:datasetColumn>
+    <ex:isRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</ex:isRequired>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#slope_flat">
+    <rdf:type rdf:resource="http://example.org/heartdisease#SlopeOfPeakExerciseStSegment"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>flat</rdfs:label>
+    <ex:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2</ex:code>
+    <rdfs:comment>Flat slope — STDepressionRisk indicator</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#age_senior">
+    <rdf:type rdf:resource="http://example.org/heartdisease#PatientAge"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>senior</rdfs:label>
+    <ex:rangeMin rdf:datatype="http://www.w3.org/2001/XMLSchema#float">60.0</ex:rangeMin>
+    <ex:rangeMax rdf:datatype="http://www.w3.org/2001/XMLSchema#float">120.0</ex:rangeMax>
+    <rdfs:comment>≥ 60 years</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#restecg_st_t_wave_abnormality">
+    <rdf:type rdf:resource="http://example.org/heartdisease#RestingEcgResults"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>st_t_wave_abnormality</rdfs:label>
+    <ex:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</ex:code>
+    <rdfs:comment>T-wave inversion or ST depression &gt; 0.05 mV</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#SevereIschaemia">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/heartdisease#SubclassProfile"/>
+    <rdfs:label>Severe Ischaemia</rdfs:label>
+    <rdfs:comment>Severe ST depression (&gt;3mm), very low max HR (&lt;120 bpm), abnormal perfusion (thal≠3), multi-vessel disease (ca≥2)</rdfs:comment>
+    <ex:priority rdf:datatype="http://www.w3.org/2001/XMLSchema#string">critical</ex:priority>
+    <ex:guideline rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2023 AHA/ACC CCD Guideline — multi-vessel disease classification</ex:guideline>
+    <ex:minRequiredSamples rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</ex:minRequiredSamples>
+    <ex:sampleCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</ex:sampleCount>
+    <ex:isCovered rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</ex:isCovered>
+    <ex:isStatisticallyAdequate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</ex:isStatisticallyAdequate>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#NumberOfMajorVesselsWithBlockageFluoroscopy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/heartdisease#ClinicalFinding"/>
+    <rdfs:label>Number of Major Vessels with Blockage (Fluoroscopy)</rdfs:label>
+    <rdfs:comment>Standard: SNOMED CT | Code: 41976001</rdfs:comment>
+    <ex:datasetColumn rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ca</ex:datasetColumn>
+    <ex:isRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</ex:isRequired>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#STDepressionRisk">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/heartdisease#SubclassProfile"/>
+    <rdfs:label>ST-Depression Risk (Flat Slope)</rdfs:label>
+    <rdfs:comment>Flat ST slope (slope=2), moderate ST depression (≥2mm), sub-maximal HR response (&lt;140 bpm)</rdfs:comment>
+    <ex:priority rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high</ex:priority>
+    <ex:guideline rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2023 AHA/ACC CCD Guideline — ST-segment slope analysis</ex:guideline>
+    <ex:minRequiredSamples rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</ex:minRequiredSamples>
+    <ex:sampleCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</ex:sampleCount>
+    <ex:isCovered rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ex:isCovered>
+    <ex:isStatisticallyAdequate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ex:isStatisticallyAdequate>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#thalach">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/heartdisease#Patient"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label>Maximum Heart Rate Achieved</rdfs:label>
+    <ex:loincCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8867-4</ex:loincCode>
+    <rdfs:comment>2023 AHA/ACC CCD — HR thresholds define ischaemia severity</rdfs:comment>
+    <ex:coverageScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</ex:coverageScore>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#hasDiagnosis">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/heartdisease#Patient"/>
+    <rdfs:range rdf:resource="http://example.org/heartdisease#Diagnosis"/>
+    <rdfs:label>hasDiagnosis</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#oldpeak_minimal_or_none">
+    <rdf:type rdf:resource="http://example.org/heartdisease#StDepressionExerciseVsRest"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>minimal_or_none</rdfs:label>
+    <ex:rangeMin rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</ex:rangeMin>
+    <ex:rangeMax rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</ex:rangeMax>
+    <rdfs:comment>0–1 mm — Minimal or absent</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#oldpeak_severe">
+    <rdf:type rdf:resource="http://example.org/heartdisease#StDepressionExerciseVsRest"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>severe</rdfs:label>
+    <ex:rangeMin rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.01</ex:rangeMin>
+    <ex:rangeMax rdf:datatype="http://www.w3.org/2001/XMLSchema#float">99.0</ex:rangeMax>
+    <rdfs:comment>&gt; 3 mm — Severe (SevereIschaemia threshold)</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#NonCardiacChestPain">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/heartdisease#SubclassProfile"/>
+    <rdfs:label>Non-Cardiac Chest Pain</rdfs:label>
+    <rdfs:comment>Non-anginal chest pain (cp=3), no exercise-induced symptoms, no ST depression — ruled out as cardiac</rdfs:comment>
+    <ex:priority rdf:datatype="http://www.w3.org/2001/XMLSchema#string">medium</ex:priority>
+    <ex:guideline rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021 AHA/ACC Chest Pain Guideline — noncardiac classification</ex:guideline>
+    <ex:minRequiredSamples rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</ex:minRequiredSamples>
+    <ex:sampleCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</ex:sampleCount>
+    <ex:isCovered rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ex:isCovered>
+    <ex:isStatisticallyAdequate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ex:isStatisticallyAdequate>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#PatientAge">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/heartdisease#AgeGroup"/>
+    <rdfs:label>Patient Age</rdfs:label>
+    <rdfs:comment>Standard: LOINC | Code: 21612-7 | Unit: years</rdfs:comment>
+    <ex:datasetColumn rdf:datatype="http://www.w3.org/2001/XMLSchema#string">age</ex:datasetColumn>
+    <ex:isRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ex:isRequired>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#thalach_moderate">
+    <rdf:type rdf:resource="http://example.org/heartdisease#MaximumHeartRateAchieved"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>moderate</rdfs:label>
+    <ex:rangeMin rdf:datatype="http://www.w3.org/2001/XMLSchema#float">120.0</ex:rangeMin>
+    <ex:rangeMax rdf:datatype="http://www.w3.org/2001/XMLSchema#float">139.0</ex:rangeMax>
+    <rdfs:comment>120–139 bpm — STDepressionRisk threshold</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#cp">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/heartdisease#Patient"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label>Chest Pain Type</rdfs:label>
+    <ex:snomedCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">29857009</ex:snomedCode>
+    <rdfs:comment>2021 AHA/ACC Chest Pain Guideline — four-type classification</rdfs:comment>
+    <ex:coverageScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</ex:coverageScore>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#sex_male">
+    <rdf:type rdf:resource="http://example.org/heartdisease#BiologicalSex"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>male</rdfs:label>
+    <ex:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</ex:code>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#slope">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/heartdisease#Patient"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label>Slope of Peak Exercise ST Segment</rdfs:label>
+    <ex:snomedCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">164930006</ex:snomedCode>
+    <ex:coverageScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</ex:coverageScore>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#num_moderate_disease">
+    <rdf:type rdf:resource="http://example.org/heartdisease#DiagnosisOfCadTargetVariable"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>moderate_disease</rdfs:label>
+    <ex:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2</ex:code>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#thal_normal">
+    <rdf:type rdf:resource="http://example.org/heartdisease#ThaliumStressTestResult"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>normal</rdfs:label>
+    <ex:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3</ex:code>
+    <rdfs:comment>Normal blood flow</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#HighRiskCAD">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/heartdisease#SubclassProfile"/>
+    <rdfs:label>Cardiovascular High-Risk CAD</rdfs:label>
+    <rdfs:comment>Male patient ≥45 with Stage 2 hypertension (≥140 mmHg), high total cholesterol (≥240 mg/dL), and elevated fasting blood sugar</rdfs:comment>
+    <ex:priority rdf:datatype="http://www.w3.org/2001/XMLSchema#string">critical</ex:priority>
+    <ex:guideline rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2017 AHA/ACC BP Guideline + 2018 ACC/AHA Lipid Guideline</ex:guideline>
+    <ex:minRequiredSamples rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</ex:minRequiredSamples>
+    <ex:sampleCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</ex:sampleCount>
+    <ex:isCovered rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ex:isCovered>
+    <ex:isStatisticallyAdequate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</ex:isStatisticallyAdequate>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#BiologicalSex">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/heartdisease#RiskFactor"/>
+    <rdfs:label>Biological Sex</rdfs:label>
+    <rdfs:comment>Standard: SNOMED CT | Code: 184100006</rdfs:comment>
+    <ex:datasetColumn rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sex</ex:datasetColumn>
+    <ex:isRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ex:isRequired>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#slope_upsloping">
+    <rdf:type rdf:resource="http://example.org/heartdisease#SlopeOfPeakExerciseStSegment"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>upsloping</rdfs:label>
+    <ex:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</ex:code>
+    <rdfs:comment>Favorable prognosis</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#oldpeak_moderate">
+    <rdf:type rdf:resource="http://example.org/heartdisease#StDepressionExerciseVsRest"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>moderate</rdfs:label>
+    <ex:rangeMin rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.01</ex:rangeMin>
+    <ex:rangeMax rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.0</ex:rangeMax>
+    <rdfs:comment>1–3 mm — Moderate depression</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#num_no_disease">
+    <rdf:type rdf:resource="http://example.org/heartdisease#DiagnosisOfCadTargetVariable"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>no_disease</rdfs:label>
+    <ex:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0</ex:code>
+    <rdfs:comment>No significant CAD</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#exang_yes">
+    <rdf:type rdf:resource="http://example.org/heartdisease#ExerciseInducedAngina"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>yes</rdfs:label>
+    <ex:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</ex:code>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#ChestPainType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/heartdisease#RiskFactor"/>
+    <rdfs:label>Chest Pain Type</rdfs:label>
+    <rdfs:comment>Standard: SNOMED CT | Code: 29857009</rdfs:comment>
+    <ex:datasetColumn rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cp</ex:datasetColumn>
+    <ex:isRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ex:isRequired>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#chol_desirable">
+    <rdf:type rdf:resource="http://example.org/heartdisease#SerumCholesterol"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>desirable</rdfs:label>
+    <ex:rangeMin rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</ex:rangeMin>
+    <ex:rangeMax rdf:datatype="http://www.w3.org/2001/XMLSchema#float">199.0</ex:rangeMax>
+    <rdfs:comment>&lt; 200 mg/dL — Desirable</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#age">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/heartdisease#Patient"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label>Patient Age</rdfs:label>
+    <ex:loincCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">21612-7</ex:loincCode>
+    <rdfs:comment>ACC/AHA risk stratification begins at age 45 for men</rdfs:comment>
+    <ex:coverageScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</ex:coverageScore>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#fbs">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/heartdisease#Patient"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label>Fasting Blood Sugar &gt; 120 mg/dL</rdfs:label>
+    <ex:loincCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1558-6</ex:loincCode>
+    <ex:coverageScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</ex:coverageScore>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#ExerciseInducedAngina">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/heartdisease#RiskFactor"/>
+    <rdfs:label>Exercise-Induced Angina</rdfs:label>
+    <rdfs:comment>Standard: SNOMED CT | Code: 194828000</rdfs:comment>
+    <ex:datasetColumn rdf:datatype="http://www.w3.org/2001/XMLSchema#string">exang</ex:datasetColumn>
+    <ex:isRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ex:isRequired>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#exang_no">
+    <rdf:type rdf:resource="http://example.org/heartdisease#ExerciseInducedAngina"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>no</rdfs:label>
+    <ex:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0</ex:code>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#belongsToSubclass">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/heartdisease#Patient"/>
+    <rdfs:range rdf:resource="http://example.org/heartdisease#SubclassProfile"/>
+    <rdfs:label>belongsToSubclass</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#Patient">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Patient</rdfs:label>
+    <rdfs:comment>A patient whose cardiovascular health data is recorded.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#fbs_elevated">
+    <rdf:type rdf:resource="http://example.org/heartdisease#FastingBloodSugar120MgDl"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>elevated</rdfs:label>
+    <ex:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</ex:code>
+    <rdfs:comment>FBS &gt; 120 mg/dL — diabetic indicator</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#trestbps">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/heartdisease#Patient"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label>Resting Blood Pressure (Systolic)</rdfs:label>
+    <ex:loincCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8480-6</ex:loincCode>
+    <rdfs:comment>2017 AHA/ACC Hypertension Guideline — four BP categories</rdfs:comment>
+    <ex:coverageScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</ex:coverageScore>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#trestbps_normal">
+    <rdf:type rdf:resource="http://example.org/heartdisease#RestingBloodPressureSystolic"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>normal</rdfs:label>
+    <ex:rangeMin rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</ex:rangeMin>
+    <ex:rangeMax rdf:datatype="http://www.w3.org/2001/XMLSchema#float">119.0</ex:rangeMax>
+    <rdfs:comment>&lt; 120 mmHg — Normal</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#trestbps_stage1_hypertension">
+    <rdf:type rdf:resource="http://example.org/heartdisease#RestingBloodPressureSystolic"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>stage1_hypertension</rdfs:label>
+    <ex:rangeMin rdf:datatype="http://www.w3.org/2001/XMLSchema#float">130.0</ex:rangeMin>
+    <ex:rangeMax rdf:datatype="http://www.w3.org/2001/XMLSchema#float">139.0</ex:rangeMax>
+    <rdfs:comment>130–139 — Stage 1 HTN</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#thalach_normal">
+    <rdf:type rdf:resource="http://example.org/heartdisease#MaximumHeartRateAchieved"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>normal</rdfs:label>
+    <ex:rangeMin rdf:datatype="http://www.w3.org/2001/XMLSchema#float">140.0</ex:rangeMin>
+    <ex:rangeMax rdf:datatype="http://www.w3.org/2001/XMLSchema#float">999.0</ex:rangeMax>
+    <rdfs:comment>≥ 140 bpm — normal exercise response</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#StableAngina">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/heartdisease#SubclassProfile"/>
+    <rdfs:label>Stable Angina</rdfs:label>
+    <rdfs:comment>Typical angina (cp=1), no exercise-induced symptoms, minimal ST changes (≤1mm), normal perfusion, no vessel obstruction</rdfs:comment>
+    <ex:priority rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high</ex:priority>
+    <ex:guideline rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021 AHA/ACC Chest Pain Guideline + 2023 AHA/ACC CCD Guideline</ex:guideline>
+    <ex:minRequiredSamples rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</ex:minRequiredSamples>
+    <ex:sampleCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</ex:sampleCount>
+    <ex:isCovered rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ex:isCovered>
+    <ex:isStatisticallyAdequate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</ex:isStatisticallyAdequate>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#num_mild_disease">
+    <rdf:type rdf:resource="http://example.org/heartdisease#DiagnosisOfCadTargetVariable"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>mild_disease</rdfs:label>
+    <ex:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</ex:code>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#hasBloodPressureLevel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/heartdisease#Patient"/>
+    <rdfs:range rdf:resource="http://example.org/heartdisease#BloodPressureLevel"/>
+    <rdfs:label>hasBloodPressureLevel</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#DiagnosisOfCadTargetVariable">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/heartdisease#Diagnosis"/>
+    <rdfs:label>Diagnosis of CAD (Target Variable)</rdfs:label>
+    <rdfs:comment>Standard: ICD-11 | Code: BA6Z</rdfs:comment>
+    <ex:datasetColumn rdf:datatype="http://www.w3.org/2001/XMLSchema#string">num</ex:datasetColumn>
+    <ex:isRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ex:isRequired>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#FastingBloodSugar120MgDl">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/heartdisease#RiskFactor"/>
+    <rdfs:label>Fasting Blood Sugar &gt; 120 mg/dL</rdfs:label>
+    <rdfs:comment>Standard: LOINC | Code: 1558-6</rdfs:comment>
+    <ex:datasetColumn rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fbs</ex:datasetColumn>
+    <ex:isRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ex:isRequired>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#chol_borderline_high">
+    <rdf:type rdf:resource="http://example.org/heartdisease#SerumCholesterol"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>borderline_high</rdfs:label>
+    <ex:rangeMin rdf:datatype="http://www.w3.org/2001/XMLSchema#float">200.0</ex:rangeMin>
+    <ex:rangeMax rdf:datatype="http://www.w3.org/2001/XMLSchema#float">239.0</ex:rangeMax>
+    <rdfs:comment>200–239 — Borderline High</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#HeartDiseaseOntology">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:label>Cardiovascular Diseases (CAD)</rdfs:label>
+    <rdfs:comment>Auto-generated OWL ontology for Cardiovascular Diseases (CAD). ICD-11 codes: BA6Z, BA40, BA5Z.</rdfs:comment>
+    <ex:overallMappingScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.5795</ex:overallMappingScore>
+    <ex:mappingVerdict rdf:datatype="http://www.w3.org/2001/XMLSchema#string">borderline</ex:mappingVerdict>
+    <ex:semanticCoverage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.2986</ex:semanticCoverage>
+    <ex:subclassCoverage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8333</ex:subclassCoverage>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#thal">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/heartdisease#Patient"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label>Thalium Stress Test Result</rdfs:label>
+    <ex:snomedCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">71651007</ex:snomedCode>
+    <ex:coverageScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</ex:coverageScore>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#thal_reversible_defect">
+    <rdf:type rdf:resource="http://example.org/heartdisease#ThaliumStressTestResult"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>reversible_defect</rdfs:label>
+    <ex:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</ex:code>
+    <rdfs:comment>Stress-induced deficit — SevereIschaemia indicator</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#thal_fixed_defect">
+    <rdf:type rdf:resource="http://example.org/heartdisease#ThaliumStressTestResult"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>fixed_defect</rdfs:label>
+    <ex:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</ex:code>
+    <rdfs:comment>Permanent perfusion deficit</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#num">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/heartdisease#Patient"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label>Diagnosis of CAD (Target Variable)</rdfs:label>
+    <ex:snomedCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BA6Z</ex:snomedCode>
+    <ex:coverageScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</ex:coverageScore>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#slope_downsloping">
+    <rdf:type rdf:resource="http://example.org/heartdisease#SlopeOfPeakExerciseStSegment"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>downsloping</rdfs:label>
+    <ex:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3</ex:code>
+    <rdfs:comment>Worst prognosis</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#StDepressionExerciseVsRest">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/heartdisease#ClinicalFinding"/>
+    <rdfs:label>ST Depression (Exercise vs Rest)</rdfs:label>
+    <rdfs:comment>Standard: SNOMED CT | Code: 164931005 | Unit: mm</rdfs:comment>
+    <ex:datasetColumn rdf:datatype="http://www.w3.org/2001/XMLSchema#string">oldpeak</ex:datasetColumn>
+    <ex:isRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ex:isRequired>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#trestbps_stage2_hypertension">
+    <rdf:type rdf:resource="http://example.org/heartdisease#RestingBloodPressureSystolic"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>stage2_hypertension</rdfs:label>
+    <ex:rangeMin rdf:datatype="http://www.w3.org/2001/XMLSchema#float">140.0</ex:rangeMin>
+    <ex:rangeMax rdf:datatype="http://www.w3.org/2001/XMLSchema#float">999.0</ex:rangeMax>
+    <rdfs:comment>≥ 140 mmHg — Stage 2 HTN</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#cp_atypical_angina">
+    <rdf:type rdf:resource="http://example.org/heartdisease#ChestPainType"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>atypical_angina</rdfs:label>
+    <ex:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2</ex:code>
+    <rdfs:comment>Atypical features, some anginal</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#num_severe_disease">
+    <rdf:type rdf:resource="http://example.org/heartdisease#DiagnosisOfCadTargetVariable"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>severe_disease</rdfs:label>
+    <ex:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3</ex:code>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#ca_one_vessel">
+    <rdf:type rdf:resource="http://example.org/heartdisease#NumberOfMajorVesselsWithBlockageFluoroscopy"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>one_vessel</rdfs:label>
+    <ex:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</ex:code>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#ca">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/heartdisease#Patient"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label>Number of Major Vessels with Blockage (Fluoroscopy)</rdfs:label>
+    <ex:snomedCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">41976001</ex:snomedCode>
+    <ex:coverageScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</ex:coverageScore>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#age_middle_aged">
+    <rdf:type rdf:resource="http://example.org/heartdisease#PatientAge"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>middle_aged</rdfs:label>
+    <ex:rangeMin rdf:datatype="http://www.w3.org/2001/XMLSchema#float">45.0</ex:rangeMin>
+    <ex:rangeMax rdf:datatype="http://www.w3.org/2001/XMLSchema#float">59.0</ex:rangeMax>
+    <rdfs:comment>45–59 — ACC/AHA elevated-risk threshold</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#MedicalTest">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>MedicalTest</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#SubclassProfile">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>SubclassProfile</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#oldpeak">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/heartdisease#Patient"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label>ST Depression (Exercise vs Rest)</rdfs:label>
+    <ex:snomedCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">164931005</ex:snomedCode>
+    <rdfs:comment>2023 AHA/ACC CCD — ST depression thresholds: 2 mm for risk, 3 mm for severe</rdfs:comment>
+    <ex:coverageScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</ex:coverageScore>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#num_very_severe_disease">
+    <rdf:type rdf:resource="http://example.org/heartdisease#DiagnosisOfCadTargetVariable"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>very_severe_disease</rdfs:label>
+    <ex:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4</ex:code>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#sex_female">
+    <rdf:type rdf:resource="http://example.org/heartdisease#BiologicalSex"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>female</rdfs:label>
+    <ex:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0</ex:code>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#hasMedicalTest">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/heartdisease#Patient"/>
+    <rdfs:range rdf:resource="http://example.org/heartdisease#MedicalTest"/>
+    <rdfs:label>hasMedicalTest</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#trestbps_elevated">
+    <rdf:type rdf:resource="http://example.org/heartdisease#RestingBloodPressureSystolic"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>elevated</rdfs:label>
+    <ex:rangeMin rdf:datatype="http://www.w3.org/2001/XMLSchema#float">120.0</ex:rangeMin>
+    <ex:rangeMax rdf:datatype="http://www.w3.org/2001/XMLSchema#float">129.0</ex:rangeMax>
+    <rdfs:comment>120–129 — Elevated BP</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#RestingEcgResults">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/heartdisease#MedicalTest"/>
+    <rdfs:label>Resting ECG Results</rdfs:label>
+    <rdfs:comment>Standard: LOINC | Code: 11524-6</rdfs:comment>
+    <ex:datasetColumn rdf:datatype="http://www.w3.org/2001/XMLSchema#string">restecg</ex:datasetColumn>
+    <ex:isRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</ex:isRequired>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#sex">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/heartdisease#Patient"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label>Biological Sex</rdfs:label>
+    <ex:snomedCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">184100006</ex:snomedCode>
+    <ex:coverageScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</ex:coverageScore>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#restecg_normal">
+    <rdf:type rdf:resource="http://example.org/heartdisease#RestingEcgResults"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>normal</rdfs:label>
+    <ex:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0</ex:code>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#thalach_critically_low">
+    <rdf:type rdf:resource="http://example.org/heartdisease#MaximumHeartRateAchieved"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>critically_low</rdfs:label>
+    <ex:rangeMin rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</ex:rangeMin>
+    <ex:rangeMax rdf:datatype="http://www.w3.org/2001/XMLSchema#float">99.0</ex:rangeMax>
+    <rdfs:comment>&lt; 100 bpm — critically low</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#ca_zero_vessels">
+    <rdf:type rdf:resource="http://example.org/heartdisease#NumberOfMajorVesselsWithBlockageFluoroscopy"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>zero_vessels</rdfs:label>
+    <ex:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0</ex:code>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#SilentIschaemia">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/heartdisease#SubclassProfile"/>
+    <rdfs:label>Silent Ischaemia (Asymptomatic CAD)</rdfs:label>
+    <rdfs:comment>Asymptomatic patient (cp=4), no exercise-induced angina, but confirmed CAD diagnosis — the highest-risk missed population</rdfs:comment>
+    <ex:priority rdf:datatype="http://www.w3.org/2001/XMLSchema#string">critical</ex:priority>
+    <ex:guideline rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ACC/AHA Silent Myocardial Ischaemia Definition</ex:guideline>
+    <ex:minRequiredSamples rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</ex:minRequiredSamples>
+    <ex:sampleCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</ex:sampleCount>
+    <ex:isCovered rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ex:isCovered>
+    <ex:isStatisticallyAdequate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ex:isStatisticallyAdequate>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#hasCholesterolLevel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/heartdisease#Patient"/>
+    <rdfs:range rdf:resource="http://example.org/heartdisease#CholesterolLevel"/>
+    <rdfs:label>hasCholesterolLevel</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#chol">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/heartdisease#Patient"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label>Serum Cholesterol</rdfs:label>
+    <ex:loincCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2093-3</ex:loincCode>
+    <rdfs:comment>2026 ACC/AHA Lipid Guideline — three cholesterol categories</rdfs:comment>
+    <ex:coverageScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</ex:coverageScore>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#hasRiskFactor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/heartdisease#Patient"/>
+    <rdfs:range rdf:resource="http://example.org/heartdisease#RiskFactor"/>
+    <rdfs:label>hasRiskFactor</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#chol_high">
+    <rdf:type rdf:resource="http://example.org/heartdisease#SerumCholesterol"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>high</rdfs:label>
+    <ex:rangeMin rdf:datatype="http://www.w3.org/2001/XMLSchema#float">240.0</ex:rangeMin>
+    <ex:rangeMax rdf:datatype="http://www.w3.org/2001/XMLSchema#float">9999.0</ex:rangeMax>
+    <rdfs:comment>≥ 240 mg/dL — High</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#restecg">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/heartdisease#Patient"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label>Resting ECG Results</rdfs:label>
+    <ex:loincCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11524-6</ex:loincCode>
+    <ex:coverageScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</ex:coverageScore>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#hasClinicalFinding">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/heartdisease#Patient"/>
+    <rdfs:range rdf:resource="http://example.org/heartdisease#ClinicalFinding"/>
+    <rdfs:label>hasClinicalFinding</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#restecg_left_ventricular_hypertrophy">
+    <rdf:type rdf:resource="http://example.org/heartdisease#RestingEcgResults"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>left_ventricular_hypertrophy</rdfs:label>
+    <ex:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2</ex:code>
+    <rdfs:comment>LVH by Estes' criteria</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#ca_two_vessels">
+    <rdf:type rdf:resource="http://example.org/heartdisease#NumberOfMajorVesselsWithBlockageFluoroscopy"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>two_vessels</rdfs:label>
+    <ex:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2</ex:code>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#MaximumHeartRateAchieved">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/heartdisease#ClinicalFinding"/>
+    <rdfs:label>Maximum Heart Rate Achieved</rdfs:label>
+    <rdfs:comment>Standard: LOINC | Code: 8867-4 | Unit: bpm</rdfs:comment>
+    <ex:datasetColumn rdf:datatype="http://www.w3.org/2001/XMLSchema#string">thalach</ex:datasetColumn>
+    <ex:isRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ex:isRequired>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#ca_three_vessels">
+    <rdf:type rdf:resource="http://example.org/heartdisease#NumberOfMajorVesselsWithBlockageFluoroscopy"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>three_vessels</rdfs:label>
+    <ex:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3</ex:code>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#SerumCholesterol">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/heartdisease#CholesterolLevel"/>
+    <rdfs:label>Serum Cholesterol</rdfs:label>
+    <rdfs:comment>Standard: LOINC | Code: 2093-3 | Unit: mg/dL</rdfs:comment>
+    <ex:datasetColumn rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chol</ex:datasetColumn>
+    <ex:isRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ex:isRequired>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#RestingBloodPressureSystolic">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/heartdisease#BloodPressureLevel"/>
+    <rdfs:label>Resting Blood Pressure (Systolic)</rdfs:label>
+    <rdfs:comment>Standard: LOINC | Code: 8480-6 | Unit: mmHg</rdfs:comment>
+    <ex:datasetColumn rdf:datatype="http://www.w3.org/2001/XMLSchema#string">trestbps</ex:datasetColumn>
+    <ex:isRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ex:isRequired>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#cp_typical_angina">
+    <rdf:type rdf:resource="http://example.org/heartdisease#ChestPainType"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>typical_angina</rdfs:label>
+    <ex:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</ex:code>
+    <rdfs:comment>Classic effort-related chest pain</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#age_young_adult">
+    <rdf:type rdf:resource="http://example.org/heartdisease#PatientAge"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>young_adult</rdfs:label>
+    <ex:rangeMin rdf:datatype="http://www.w3.org/2001/XMLSchema#float">18.0</ex:rangeMin>
+    <ex:rangeMax rdf:datatype="http://www.w3.org/2001/XMLSchema#float">44.0</ex:rangeMax>
+    <rdfs:comment>&lt; 45 years</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#cp_non_anginal_pain">
+    <rdf:type rdf:resource="http://example.org/heartdisease#ChestPainType"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>non_anginal_pain</rdfs:label>
+    <ex:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3</ex:code>
+    <rdfs:comment>Non-ischaemic chest pain</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#hasAgeGroup">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/heartdisease#Patient"/>
+    <rdfs:range rdf:resource="http://example.org/heartdisease#AgeGroup"/>
+    <rdfs:label>hasAgeGroup</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#thalach_low">
+    <rdf:type rdf:resource="http://example.org/heartdisease#MaximumHeartRateAchieved"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>low</rdfs:label>
+    <ex:rangeMin rdf:datatype="http://www.w3.org/2001/XMLSchema#float">100.0</ex:rangeMin>
+    <ex:rangeMax rdf:datatype="http://www.w3.org/2001/XMLSchema#float">119.0</ex:rangeMax>
+    <rdfs:comment>100–119 bpm — SevereIschaemia threshold</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#CholesterolLevel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>CholesterolLevel</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#RiskFactor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>RiskFactor</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#ThaliumStressTestResult">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/heartdisease#MedicalTest"/>
+    <rdfs:label>Thalium Stress Test Result</rdfs:label>
+    <rdfs:comment>Standard: SNOMED CT | Code: 71651007</rdfs:comment>
+    <ex:datasetColumn rdf:datatype="http://www.w3.org/2001/XMLSchema#string">thal</ex:datasetColumn>
+    <ex:isRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</ex:isRequired>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#BloodPressureLevel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>BloodPressureLevel</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#ClinicalFinding">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>ClinicalFinding</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#Diagnosis">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Diagnosis</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#cp_asymptomatic">
+    <rdf:type rdf:resource="http://example.org/heartdisease#ChestPainType"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>asymptomatic</rdfs:label>
+    <ex:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4</ex:code>
+    <rdfs:comment>No chest pain — silent presentation</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#AgeGroup">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>AgeGroup</rdfs:label>
+  </rdf:Description>
+</rdf:RDF>
