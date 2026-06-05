@@ -213,9 +213,11 @@ def main():
     # ── Charts ────────────────────────────────────────────────────────────────
     if want_charts:
         print(f"\n  Saving charts → {output_dir}/")
-        generate_charts(validation, col_cov, mapping, output_dir=output_dir)
+        #generate_charts(validation, col_cov, mapping, output_dir=output_dir)
+        generate_charts(validation, col_cov, mapping, output_dir=output_dir, n_records=len(df))
     print("  Done.\n")
     input("  Press Enter to close...") 
 
 if __name__ == "__main__":
     main()
+
