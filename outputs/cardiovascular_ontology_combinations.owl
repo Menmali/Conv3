@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:ex="http://example.org/heartdisease#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://example.org/heartdisease#stageNumber">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label>stageNumber</rdfs:label>
+    <rdfs:comment>stage index 1 through 6</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#CoverageStage_4">
+    <rdf:type rdf:resource="http://example.org/heartdisease#Stage4_age_sex_cp_trestbps"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>Coverage Stage 4: age, sex, cp, trestbps</rdfs:label>
+    <ex:rawCoverageScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">78.12</ex:rawCoverageScore>
+    <ex:theoreticalMaxScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">9600</ex:theoreticalMaxScore>
+    <ex:expectedCombinations rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">96</ex:expectedCombinations>
+    <ex:observedCombinations rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">75</ex:observedCombinations>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#Stage4_age_sex_cp_trestbps">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/heartdisease#SemanticCoverage"/>
+    <rdfs:label>Stage 4: Adding blood pressure — 96 expected combinations</rdfs:label>
+    <ex:stageNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</ex:stageNumber>
+    <ex:stageAttributes>age, sex, cp, trestbps</ex:stageAttributes>
+    <ex:expectedCombinations rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">96</ex:expectedCombinations>
+    <ex:observedCombinations rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">75</ex:observedCombinations>
+    <ex:rawCoverageScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">78.12</ex:rawCoverageScore>
+    <ex:theoreticalMaxScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">9600</ex:theoreticalMaxScore>
+    <ex:missingCombination>('middle_aged', '0', '1', 'elevated')</ex:missingCombination>
+    <ex:missingCombination>('middle_aged', '0', '1', 'normal')</ex:missingCombination>
+    <ex:missingCombination>('middle_aged', '0', '1', 'stage1_hypertension')</ex:missingCombination>
+    <ex:missingCombination>('senior', '0', '1', 'elevated')</ex:missingCombination>
+    <ex:missingCombination>('senior', '0', '1', 'normal')</ex:missingCombination>
+    <ex:missingCombination>('senior', '0', '1', 'stage1_hypertension')</ex:missingCombination>
+    <ex:missingCombination>('senior', '0', '2', 'normal')</ex:missingCombination>
+    <ex:missingCombination>('senior', '0', '2', 'stage1_hypertension')</ex:missingCombination>
+    <ex:missingCombination>('senior', '1', '1', 'elevated')</ex:missingCombination>
+    <ex:missingCombination>('senior', '1', '2', 'normal')</ex:missingCombination>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#Stage2_age_sex">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/heartdisease#SemanticCoverage"/>
+    <rdfs:label>Stage 2: Age × sex — 6 expected combinations</rdfs:label>
+    <ex:stageNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ex:stageNumber>
+    <ex:stageAttributes>age, sex</ex:stageAttributes>
+    <ex:expectedCombinations rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</ex:expectedCombinations>
+    <ex:observedCombinations rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</ex:observedCombinations>
+    <ex:rawCoverageScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">100.0</ex:rawCoverageScore>
+    <ex:theoreticalMaxScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">600</ex:theoreticalMaxScore>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#theoreticalMaxScore">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label>theoreticalMaxScore</rdfs:label>
+    <rdfs:comment>min(n,expected)/expected * 100</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#Stage5_age_sex_cp_trestbps_chol">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/heartdisease#SemanticCoverage"/>
+    <rdfs:label>Stage 5: Adding cholesterol — 288 expected combinations</rdfs:label>
+    <ex:stageNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</ex:stageNumber>
+    <ex:stageAttributes>age, sex, cp, trestbps, chol</ex:stageAttributes>
+    <ex:expectedCombinations rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">288</ex:expectedCombinations>
+    <ex:observedCombinations rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">141</ex:observedCombinations>
+    <ex:rawCoverageScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">48.96</ex:rawCoverageScore>
+    <ex:theoreticalMaxScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">28800</ex:theoreticalMaxScore>
+    <ex:missingCombination>('middle_aged', '0', '1', 'elevated', 'borderline_high')</ex:missingCombination>
+    <ex:missingCombination>('middle_aged', '0', '1', 'elevated', 'desirable')</ex:missingCombination>
+    <ex:missingCombination>('middle_aged', '0', '1', 'elevated', 'high')</ex:missingCombination>
+    <ex:missingCombination>('middle_aged', '0', '1', 'normal', 'borderline_high')</ex:missingCombination>
+    <ex:missingCombination>('middle_aged', '0', '1', 'normal', 'desirable')</ex:missingCombination>
+    <ex:missingCombination>('middle_aged', '0', '1', 'normal', 'high')</ex:missingCombination>
+    <ex:missingCombination>('middle_aged', '0', '1', 'stage1_hypertension', 'borderline_high')</ex:missingCombination>
+    <ex:missingCombination>('middle_aged', '0', '1', 'stage1_hypertension', 'desirable')</ex:missingCombination>
+    <ex:missingCombination>('middle_aged', '0', '1', 'stage1_hypertension', 'high')</ex:missingCombination>
+    <ex:missingCombination>('middle_aged', '0', '1', 'stage2_hypertension', 'borderline_high')</ex:missingCombination>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#CoverageStage_3">
+    <rdf:type rdf:resource="http://example.org/heartdisease#Stage3_age_sex_cp"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>Coverage Stage 3: age, sex, cp</rdfs:label>
+    <ex:rawCoverageScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">95.83</ex:rawCoverageScore>
+    <ex:theoreticalMaxScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2400</ex:theoreticalMaxScore>
+    <ex:expectedCombinations rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24</ex:expectedCombinations>
+    <ex:observedCombinations rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">23</ex:observedCombinations>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#CoverageStage_6">
+    <rdf:type rdf:resource="http://example.org/heartdisease#Stage6_age_sex_cp_trestbps_chol_exang"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>Coverage Stage 6: age, sex, cp, trestbps, chol, exang</rdfs:label>
+    <ex:rawCoverageScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">29.86</ex:rawCoverageScore>
+    <ex:theoreticalMaxScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">30300</ex:theoreticalMaxScore>
+    <ex:expectedCombinations rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">576</ex:expectedCombinations>
+    <ex:observedCombinations rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">172</ex:observedCombinations>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#SemanticCoverage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>SemanticCoverage</rdfs:label>
+    <rdfs:comment>Parent class for all semantic combination coverage stages.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#Stage1_age">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/heartdisease#SemanticCoverage"/>
+    <rdfs:label>Stage 1: Age group coverage — 3 expected bins</rdfs:label>
+    <ex:stageNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ex:stageNumber>
+    <ex:stageAttributes>age</ex:stageAttributes>
+    <ex:expectedCombinations rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ex:expectedCombinations>
+    <ex:observedCombinations rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ex:observedCombinations>
+    <ex:rawCoverageScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">100.0</ex:rawCoverageScore>
+    <ex:theoreticalMaxScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">300</ex:theoreticalMaxScore>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#CoverageStage_1">
+    <rdf:type rdf:resource="http://example.org/heartdisease#Stage1_age"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>Coverage Stage 1: age</rdfs:label>
+    <ex:rawCoverageScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">100.0</ex:rawCoverageScore>
+    <ex:theoreticalMaxScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">300</ex:theoreticalMaxScore>
+    <ex:expectedCombinations rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ex:expectedCombinations>
+    <ex:observedCombinations rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ex:observedCombinations>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#Stage6_age_sex_cp_trestbps_chol_exang">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/heartdisease#SemanticCoverage"/>
+    <rdfs:label>Stage 6: Adding exercise angina — 576 expected combinations</rdfs:label>
+    <ex:stageNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</ex:stageNumber>
+    <ex:stageAttributes>age, sex, cp, trestbps, chol, exang</ex:stageAttributes>
+    <ex:expectedCombinations rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">576</ex:expectedCombinations>
+    <ex:observedCombinations rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">172</ex:observedCombinations>
+    <ex:rawCoverageScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">29.86</ex:rawCoverageScore>
+    <ex:theoreticalMaxScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">30300</ex:theoreticalMaxScore>
+    <ex:missingCombination>('middle_aged', '0', '1', 'elevated', 'borderline_high', '0')</ex:missingCombination>
+    <ex:missingCombination>('middle_aged', '0', '1', 'elevated', 'borderline_high', '1')</ex:missingCombination>
+    <ex:missingCombination>('middle_aged', '0', '1', 'elevated', 'desirable', '0')</ex:missingCombination>
+    <ex:missingCombination>('middle_aged', '0', '1', 'elevated', 'desirable', '1')</ex:missingCombination>
+    <ex:missingCombination>('middle_aged', '0', '1', 'elevated', 'high', '0')</ex:missingCombination>
+    <ex:missingCombination>('middle_aged', '0', '1', 'elevated', 'high', '1')</ex:missingCombination>
+    <ex:missingCombination>('middle_aged', '0', '1', 'normal', 'borderline_high', '0')</ex:missingCombination>
+    <ex:missingCombination>('middle_aged', '0', '1', 'normal', 'borderline_high', '1')</ex:missingCombination>
+    <ex:missingCombination>('middle_aged', '0', '1', 'normal', 'desirable', '0')</ex:missingCombination>
+    <ex:missingCombination>('middle_aged', '0', '1', 'normal', 'desirable', '1')</ex:missingCombination>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#Stage3_age_sex_cp">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/heartdisease#SemanticCoverage"/>
+    <rdfs:label>Stage 3: Age × sex × chest pain type — 24 expected combinations</rdfs:label>
+    <ex:stageNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ex:stageNumber>
+    <ex:stageAttributes>age, sex, cp</ex:stageAttributes>
+    <ex:expectedCombinations rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24</ex:expectedCombinations>
+    <ex:observedCombinations rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">23</ex:observedCombinations>
+    <ex:rawCoverageScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">95.83</ex:rawCoverageScore>
+    <ex:theoreticalMaxScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2400</ex:theoreticalMaxScore>
+    <ex:missingCombination>('young_adult', '0', '1')</ex:missingCombination>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#missingCombination">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label>missingCombination</rdfs:label>
+    <rdfs:comment>a combination tuple absent from the dataset</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#CoverageStage_5">
+    <rdf:type rdf:resource="http://example.org/heartdisease#Stage5_age_sex_cp_trestbps_chol"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>Coverage Stage 5: age, sex, cp, trestbps, chol</rdfs:label>
+    <ex:rawCoverageScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">48.96</ex:rawCoverageScore>
+    <ex:theoreticalMaxScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">28800</ex:theoreticalMaxScore>
+    <ex:expectedCombinations rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">288</ex:expectedCombinations>
+    <ex:observedCombinations rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">141</ex:observedCombinations>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#CoverageStage_2">
+    <rdf:type rdf:resource="http://example.org/heartdisease#Stage2_age_sex"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>Coverage Stage 2: age, sex</rdfs:label>
+    <ex:rawCoverageScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">100.0</ex:rawCoverageScore>
+    <ex:theoreticalMaxScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">600</ex:theoreticalMaxScore>
+    <ex:expectedCombinations rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</ex:expectedCombinations>
+    <ex:observedCombinations rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</ex:observedCombinations>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#expectedCombinations">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label>expectedCombinations</rdfs:label>
+    <rdfs:comment>total ontology-defined combinations at this stage</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#rawCoverageScore">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label>rawCoverageScore</rdfs:label>
+    <rdfs:comment>observed / expected as a percentage</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#stageAttributes">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label>stageAttributes</rdfs:label>
+    <rdfs:comment>comma-separated attribute list at this stage</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#HeartDiseaseOntology_Combinations">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:label>Cardiovascular Diseases (CAD) — Stage 2b: Combinations</rdfs:label>
+    <rdfs:comment>Semantic combination coverage layer. Contains the SemanticCoverage class hierarchy with one OWL class per semantic progression stage, annotated with expected/observed combination counts, raw coverage score, theoretical maximum, and missing combination tuples.</rdfs:comment>
+    <ex:datasetRecords rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">303</ex:datasetRecords>
+    <ex:semanticCoverage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.2986</ex:semanticCoverage>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#observedCombinations">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label>observedCombinations</rdfs:label>
+    <rdfs:comment>combinations actually present in the dataset</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+</rdf:RDF>

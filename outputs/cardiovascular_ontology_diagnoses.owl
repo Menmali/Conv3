@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:ex="http://example.org/heartdisease#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://example.org/heartdisease#Diagnosis_NonCardiacChestPain">
+    <rdf:type rdf:resource="http://example.org/heartdisease#NonCardiacChestPain"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>Diagnosis: Non-Cardiac</rdfs:label>
+    <ex:coverageVerdict>adequate</ex:coverageVerdict>
+    <ex:subclassPriority>medium</ex:subclassPriority>
+    <ex:sampleCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</ex:sampleCount>
+    <ex:isCovered rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ex:isCovered>
+    <ex:isStatisticallyAdequate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ex:isStatisticallyAdequate>
+    <ex:minRequiredSamples rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</ex:minRequiredSamples>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#SevereIschaemia">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/heartdisease#Diagnosis"/>
+    <rdfs:label>Severe Ischaemia</rdfs:label>
+    <rdfs:comment>Severe ST depression (&gt;3mm), very low max HR (&lt;120 bpm), abnormal perfusion (thal≠3), multi-vessel disease (ca≥2)</rdfs:comment>
+    <ex:subclassPriority>critical</ex:subclassPriority>
+    <ex:guideline>2023 AHA/ACC CCD Guideline — multi-vessel disease classification</ex:guideline>
+    <ex:minRequiredSamples rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</ex:minRequiredSamples>
+    <ex:coverageVerdict>absent</ex:coverageVerdict>
+    <ex:sampleCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</ex:sampleCount>
+    <ex:isCovered rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</ex:isCovered>
+    <ex:isStatisticallyAdequate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</ex:isStatisticallyAdequate>
+    <ex:clinicalNote>Severe ST depression (&gt;3mm), very low max HR (&lt;120 bpm), abnormal perfusion (thal≠3), multi-vessel disease (ca≥2)</ex:clinicalNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#Diagnosis_STDepressionRisk">
+    <rdf:type rdf:resource="http://example.org/heartdisease#STDepressionRisk"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>Diagnosis: ST-Depression</rdfs:label>
+    <ex:coverageVerdict>adequate</ex:coverageVerdict>
+    <ex:subclassPriority>high</ex:subclassPriority>
+    <ex:sampleCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</ex:sampleCount>
+    <ex:isCovered rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ex:isCovered>
+    <ex:isStatisticallyAdequate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ex:isStatisticallyAdequate>
+    <ex:minRequiredSamples rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</ex:minRequiredSamples>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#StableAngina">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/heartdisease#Diagnosis"/>
+    <rdfs:label>Stable Angina</rdfs:label>
+    <rdfs:comment>Typical angina (cp=1), no exercise-induced symptoms, minimal ST changes (≤1mm), normal perfusion, no vessel obstruction</rdfs:comment>
+    <ex:subclassPriority>high</ex:subclassPriority>
+    <ex:guideline>2021 AHA/ACC Chest Pain Guideline + 2023 AHA/ACC CCD Guideline</ex:guideline>
+    <ex:minRequiredSamples rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</ex:minRequiredSamples>
+    <ex:coverageVerdict>present_insufficient</ex:coverageVerdict>
+    <ex:sampleCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</ex:sampleCount>
+    <ex:isCovered rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ex:isCovered>
+    <ex:isStatisticallyAdequate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</ex:isStatisticallyAdequate>
+    <ex:clinicalNote>Typical angina (cp=1), no exercise-induced symptoms, minimal ST changes (≤1mm), normal perfusion, no vessel obstruction</ex:clinicalNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#NonCardiacChestPain">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/heartdisease#Diagnosis"/>
+    <rdfs:label>Non-Cardiac Chest Pain</rdfs:label>
+    <rdfs:comment>Non-anginal chest pain (cp=3), no exercise-induced symptoms, no ST depression — ruled out as cardiac</rdfs:comment>
+    <ex:subclassPriority>medium</ex:subclassPriority>
+    <ex:guideline>2021 AHA/ACC Chest Pain Guideline — noncardiac classification</ex:guideline>
+    <ex:minRequiredSamples rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</ex:minRequiredSamples>
+    <ex:coverageVerdict>adequate</ex:coverageVerdict>
+    <ex:sampleCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</ex:sampleCount>
+    <ex:isCovered rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ex:isCovered>
+    <ex:isStatisticallyAdequate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ex:isStatisticallyAdequate>
+    <ex:clinicalNote>Non-anginal chest pain (cp=3), no exercise-induced symptoms, no ST depression — ruled out as cardiac</ex:clinicalNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#STDepressionRisk">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/heartdisease#Diagnosis"/>
+    <rdfs:label>ST-Depression Risk (Flat Slope)</rdfs:label>
+    <rdfs:comment>Flat ST slope (slope=2), moderate ST depression (≥2mm), sub-maximal HR response (&lt;140 bpm)</rdfs:comment>
+    <ex:subclassPriority>high</ex:subclassPriority>
+    <ex:guideline>2023 AHA/ACC CCD Guideline — ST-segment slope analysis</ex:guideline>
+    <ex:minRequiredSamples rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</ex:minRequiredSamples>
+    <ex:coverageVerdict>adequate</ex:coverageVerdict>
+    <ex:sampleCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</ex:sampleCount>
+    <ex:isCovered rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ex:isCovered>
+    <ex:isStatisticallyAdequate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ex:isStatisticallyAdequate>
+    <ex:clinicalNote>Flat ST slope (slope=2), moderate ST depression (≥2mm), sub-maximal HR response (&lt;140 bpm)</ex:clinicalNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#Diagnosis_HighRiskCAD">
+    <rdf:type rdf:resource="http://example.org/heartdisease#HighRiskCAD"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>Diagnosis: High-Risk CAD</rdfs:label>
+    <ex:coverageVerdict>present_insufficient</ex:coverageVerdict>
+    <ex:subclassPriority>critical</ex:subclassPriority>
+    <ex:sampleCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</ex:sampleCount>
+    <ex:isCovered rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ex:isCovered>
+    <ex:isStatisticallyAdequate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</ex:isStatisticallyAdequate>
+    <ex:minRequiredSamples rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</ex:minRequiredSamples>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#SilentIschaemia">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/heartdisease#Diagnosis"/>
+    <rdfs:label>Silent Ischaemia (Asymptomatic CAD)</rdfs:label>
+    <rdfs:comment>Asymptomatic patient (cp=4), no exercise-induced angina, but confirmed CAD diagnosis — the highest-risk missed population</rdfs:comment>
+    <ex:subclassPriority>critical</ex:subclassPriority>
+    <ex:guideline>ACC/AHA Silent Myocardial Ischaemia Definition</ex:guideline>
+    <ex:minRequiredSamples rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</ex:minRequiredSamples>
+    <ex:coverageVerdict>adequate</ex:coverageVerdict>
+    <ex:sampleCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</ex:sampleCount>
+    <ex:isCovered rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ex:isCovered>
+    <ex:isStatisticallyAdequate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ex:isStatisticallyAdequate>
+    <ex:clinicalNote>Asymptomatic patient (cp=4), no exercise-induced angina, but confirmed CAD diagnosis — the highest-risk missed population</ex:clinicalNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#Diagnosis_StableAngina">
+    <rdf:type rdf:resource="http://example.org/heartdisease#StableAngina"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>Diagnosis: Stable Angina</rdfs:label>
+    <ex:coverageVerdict>present_insufficient</ex:coverageVerdict>
+    <ex:subclassPriority>high</ex:subclassPriority>
+    <ex:sampleCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</ex:sampleCount>
+    <ex:isCovered rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ex:isCovered>
+    <ex:isStatisticallyAdequate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</ex:isStatisticallyAdequate>
+    <ex:minRequiredSamples rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</ex:minRequiredSamples>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#Diagnosis_SilentIschaemia">
+    <rdf:type rdf:resource="http://example.org/heartdisease#SilentIschaemia"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>Diagnosis: Silent Ischaemia</rdfs:label>
+    <ex:coverageVerdict>adequate</ex:coverageVerdict>
+    <ex:subclassPriority>critical</ex:subclassPriority>
+    <ex:sampleCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</ex:sampleCount>
+    <ex:isCovered rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ex:isCovered>
+    <ex:isStatisticallyAdequate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ex:isStatisticallyAdequate>
+    <ex:minRequiredSamples rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</ex:minRequiredSamples>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#guideline">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label>guideline</rdfs:label>
+    <rdfs:comment>source clinical guideline</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#HighRiskCAD">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/heartdisease#Diagnosis"/>
+    <rdfs:label>Cardiovascular High-Risk CAD</rdfs:label>
+    <rdfs:comment>Male patient ≥45 with Stage 2 hypertension (≥140 mmHg), high total cholesterol (≥240 mg/dL), and elevated fasting blood sugar</rdfs:comment>
+    <ex:subclassPriority>critical</ex:subclassPriority>
+    <ex:guideline>2017 AHA/ACC BP Guideline + 2018 ACC/AHA Lipid Guideline</ex:guideline>
+    <ex:minRequiredSamples rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</ex:minRequiredSamples>
+    <ex:coverageVerdict>present_insufficient</ex:coverageVerdict>
+    <ex:sampleCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</ex:sampleCount>
+    <ex:isCovered rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ex:isCovered>
+    <ex:isStatisticallyAdequate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</ex:isStatisticallyAdequate>
+    <ex:clinicalNote>Male patient ≥45 with Stage 2 hypertension (≥140 mmHg), high total cholesterol (≥240 mg/dL), and elevated fasting blood sugar</ex:clinicalNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#minRequiredSamples">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label>minRequiredSamples</rdfs:label>
+    <rdfs:comment>minimum samples required for adequacy</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#Diagnosis">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Diagnosis</rdfs:label>
+    <rdfs:comment>Parent class for all disease subclass diagnoses.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#clinicalNote">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label>clinicalNote</rdfs:label>
+    <rdfs:comment>clinical description of this subclass</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#subclassPriority">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label>subclassPriority</rdfs:label>
+    <rdfs:comment>clinical priority: critical/high/medium</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#Diagnosis_SevereIschaemia">
+    <rdf:type rdf:resource="http://example.org/heartdisease#SevereIschaemia"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>Diagnosis: Severe Ischaemia</rdfs:label>
+    <ex:coverageVerdict>absent</ex:coverageVerdict>
+    <ex:subclassPriority>critical</ex:subclassPriority>
+    <ex:sampleCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</ex:sampleCount>
+    <ex:isCovered rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</ex:isCovered>
+    <ex:isStatisticallyAdequate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</ex:isStatisticallyAdequate>
+    <ex:minRequiredSamples rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</ex:minRequiredSamples>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#coverageVerdict">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label>coverageVerdict</rdfs:label>
+    <rdfs:comment>adequate / present_insufficient / absent</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#HeartDiseaseOntology_Diagnoses">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:label>Cardiovascular Diseases (CAD) — Stage 2a: Diagnoses</rdfs:label>
+    <rdfs:comment>Diagnosis coverage layer. Contains the Diagnosis class hierarchy with one OWL class per disease subclass annotated with pipeline results: sample count, coverage verdict, statistical adequacy. Load in WebVOWL to see the subclass hierarchy.</rdfs:comment>
+    <ex:overallMappingScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.5795</ex:overallMappingScore>
+    <ex:mappingVerdict rdf:datatype="http://www.w3.org/2001/XMLSchema#string">borderline</ex:mappingVerdict>
+    <ex:subclassCoverage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8333</ex:subclassCoverage>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#isStatisticallyAdequate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label>isStatisticallyAdequate</rdfs:label>
+    <rdfs:comment>true if sample count &gt;= min required</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#sampleCount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label>sampleCount</rdfs:label>
+    <rdfs:comment>number of matching records</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/heartdisease#isCovered">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label>isCovered</rdfs:label>
+    <rdfs:comment>true if &gt;= 1 record matches</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </rdf:Description>
+</rdf:RDF>
