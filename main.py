@@ -25,6 +25,7 @@ from framework.ontology_mapper      import map_to_ontology
 from framework.report_generator     import (
     print_validation, print_column_coverage,
     print_ontology_mapping, generate_charts,
+    generate_chart4_adequacy, 
 )
 
 
@@ -213,8 +214,9 @@ def main():
     # ── Charts ────────────────────────────────────────────────────────────────
     if want_charts:
         print(f"\n  Saving charts → {output_dir}/")
-        #generate_charts(validation, col_cov, mapping, output_dir=output_dir)
-        generate_charts(validation, col_cov, mapping, output_dir=output_dir, n_records=len(df))
+        generate_charts(validation, col_cov, mapping, 
+                        output_dir=output_dir, n_records=len(df))
+        generate_chart4_adequacy(mapping, col_cov, output_dir=output_dir)
     print("  Done.\n")
     input("  Press Enter to close...") 
 
